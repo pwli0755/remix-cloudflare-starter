@@ -41,7 +41,7 @@ test('fetch README from GitHub if not cached', async ({
 	// Mock request
 	msw.use(
 		http.get(
-			'https://api.github.com/repos/edmundhung/remix-cloudflare-template/contents/README.md',
+			'https://api.github.com/repos/pwli0755/remix-cloudflare-starter/contents/README.md',
 			() => {
 				return Response.json({
 					type: 'file',

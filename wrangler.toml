@@ -8,6 +8,7 @@ id = "f93bb30a68f548648847b60bbb454917"
 [vars]
 GITHUB_OWNER = "pwli0755"
 GITHUB_REPO = "remix-cloudflare-starter"
+SESSION_SECRET = "0f46b54990caaea0c0e3c06466da9074"
 
 [[d1_databases]]
 binding = "DB"                                       # i.e. available in your Worker on env.DB

@@ -7,13 +7,12 @@
     "dev": "remix vite:dev",
     "dev:wrangler": "remix vite:build && npx wrangler pages dev ./build/client",
     "generate:migration": "npx drizzle-kit generate",
-    "generate:wrangler": "npx wrangler types",
-    "test": "playwright test --ui",
+    "test": "npx playwright test --ui",
     "start": "wrangler pages dev ./build/client",
     "build": "remix vite:build",
     "cleanup": "rimraf .cache ./build",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "typecheck": "wrangler types && tsc",
+    "typecheck": "npx wrangler types && tsc",
     "prepare": "husky"
   },
   "dependencies": {
