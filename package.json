@@ -1,10 +1,13 @@
 {
   "private": true,
-  "name": "remix-cloudflare-template",
+  "name": "remix-cloudflare-starter",
   "type": "module",
   "description": "All-in-one remix starter template for Cloudflare Pages",
   "scripts": {
     "dev": "remix vite:dev",
+    "dev:wrangler": "remix vite:build && npx wrangler pages dev ./build/client",
+    "generate:migration": "npx drizzle-kit generate",
+    "generate:wrangler": "npx wrangler types",
     "test": "playwright test --ui",
     "start": "wrangler pages dev ./build/client",
     "build": "remix vite:build",
@@ -15,12 +18,21 @@
   },
   "dependencies": {
     "@markdoc/markdoc": "^0.4.0",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/cloudflare": "^2.8.1",
     "@remix-run/cloudflare-pages": "^2.8.1",
     "@remix-run/react": "^2.8.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.33.0",
     "isbot": "^3.6.5",
+    "lucide-react": "^0.438.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240222.0",
@@ -31,9 +43,11 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
-    "autoprefixer": "^10.4.18",
+    "@types/uuid": "^10.0.0",
+    "autoprefixer": "^10.4.20",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
+    "drizzle-kit": "^0.24.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
@@ -43,11 +57,11 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "rimraf": "^5.0.5",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.4.2",
     "vite": "^5.1.5",
     "vite-tsconfig-paths": "^4.3.1",
-    "wrangler": "^3.32.0"
+    "wrangler": "^3.74.0"
   },
   "engines": {
     "node": ">=18"
