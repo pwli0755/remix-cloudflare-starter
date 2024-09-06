@@ -1,9 +1,16 @@
-name = "remix-cloudflare-template"
+name = "remix-cloudflare-starter"
 compatibility_date = "2024-02-11"
-kv_namespaces = [
-  { binding = "cache", id = "cache" }
-]
+
+[[kv_namespaces]]
+binding = "cache"
+id = "f93bb30a68f548648847b60bbb454917"
 
 [vars]
-GITHUB_OWNER = "edmundhung"
-GITHUB_REPO = "remix-cloudflare-template"
+GITHUB_OWNER = "pwli0755"
+GITHUB_REPO = "remix-cloudflare-starter"
+
+[[d1_databases]]
+binding = "DB"                                       # i.e. available in your Worker on env.DB
+database_name = "remix-starter-db"
+database_id = "11236a6f-f12d-4fa4-bc8b-181b01432399"
+migrations_dir = "./migrations"
