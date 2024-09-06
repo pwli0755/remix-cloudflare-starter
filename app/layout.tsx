@@ -3,7 +3,6 @@ import chevronRightIcon from '~/assets/chevron-right.svg';
 import remixLetterLogo from '~/assets/remix-letter-light.svg';
 import { Link, useLocation } from '@remix-run/react';
 import { Fragment, useEffect, useLayoutEffect, useRef } from 'react';
-import { Button } from './components/ui/button';
 
 export interface Menu {
 	title: string;
@@ -90,7 +89,6 @@ export function MainNavigation({ menus }: { menus: Menu[] }) {
 
 	return (
 		<div className="flex flex-col lg:h-screen">
-			<Button>Hello</Button>
 			<Breadcrumbs locationKey={location.key} trails={trails}>
 				<nav className="mx-auto flex max-w-screen-sm flex-1 flex-col px-5 py-5 lg:py-10">
 					<header className="px-2 pb-8 pt-1">
