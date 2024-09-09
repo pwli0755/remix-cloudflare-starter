@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "remix vite:dev",
     "dev:wrangler": "remix vite:build && npx wrangler pages dev ./build/client",
+    "deploy": "npx wrangler pages deploy",
     "generate:migration": "npx drizzle-kit generate",
     "test": "npx playwright test --ui",
     "start": "wrangler pages dev ./build/client",
