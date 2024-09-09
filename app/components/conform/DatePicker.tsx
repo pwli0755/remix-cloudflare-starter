@@ -44,7 +44,7 @@ export function DatePickerConform({ meta }: { meta: FieldMetadata<Date> }) {
 					>
 						<CalendarIcon className="mr-2 h-4 w-4" />
 						{control.value ? (
-							format(control.value, 'PPP')
+							format(control.value, 'MM/dd/yyyy')
 						) : (
 							<span>Pick a date</span>
 						)}
@@ -55,6 +55,10 @@ export function DatePickerConform({ meta }: { meta: FieldMetadata<Date> }) {
 						mode="single"
 						selected={new Date(control.value ?? '')}
 						onSelect={value => control.change(value?.toISOString() ?? '')}
+						fixedWeeks
+						fromDate={new Date(2000, 1, 1, 0, 0, 0)}
+						toDate={new Date()}
+						captionLayout="dropdown-buttons"
 						initialFocus
 					/>
 				</PopoverContent>
