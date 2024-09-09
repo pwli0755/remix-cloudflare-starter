@@ -1,4 +1,4 @@
-import type { ActionFunctionArgs } from '@remix-run/node';
+import type { ActionFunctionArgs } from '@remix-run/cloudflare';
 import { CheckboxConform } from '~/components/conform/Checkbox';
 import { CheckboxGroupConform } from '~/components/conform/CheckboxGroup';
 import { CountryPickerConform } from '~/components/conform/CountryPicker';
@@ -63,9 +63,7 @@ const UserSubscriptionSchema = z.object({
 
 export const action = async ({ request, context }: ActionFunctionArgs) => {
 	const formData = await request.formData();
-	console.log('========================>', formData);
 	const result = parseWithZod(formData, { schema: UserSubscriptionSchema });
-	console.log('========================>', result);
 	if (result.status !== 'success') {
 		return json(result.reply());
 	}
@@ -78,7 +76,6 @@ export const action = async ({ request, context }: ActionFunctionArgs) => {
 		})
 		.returning();
 
-	console.log('user saved: ++++++++++ ', u);
 	return json({ ...result.reply(), user: u });
 	if (formData.get('name') === '11111') {
 		return json({ ...result.reply(), code: 0 });
